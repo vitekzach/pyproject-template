@@ -1,0 +1,50 @@
+version: "3.9"
+
+networks:
+  loki:
+
+services:
+  black:
+    image: "pyfound/black:latest_release"
+    command: blackd --bind-host 0.0.0.0 --bind-port 45484
+    ports:
+      - "45484:45484"
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./logging_stack/configs/grafana-datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yml
+      - ./logging_stack/.grafana:/var/lib/grafana
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+    networks:
+      - loki
+
+  loki:
+    image: grafana/loki:latest
+    volumes:
+      - ./logging_stack/configs/loki-config.yaml:/etc/loki/loki-config.yaml
+      - ./logging_stack/.loki:/var/lib/loki
+      - ./logging_stack/.loki_tmp:/tmp
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/loki-config.yaml
+    networks:
+      - loki
+
+  promtail:
+    image: grafana/promtail:latest
+    volumes:
+      - ./logging_stack/.promtail:/tmp
+      - ./logging_stack/configs/promtail-config.yaml:/etc/promtail/promtail-config.yaml
+      - ./.logs/log.json:/opt/logs/log.json
+    command: -config.file=/etc/promtail/promtail-config.yaml
+    depends_on:
+      - loki
+    networks:
+      - loki
+
