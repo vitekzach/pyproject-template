@@ -72,10 +72,15 @@ repos:
         args:
           - --ignore-missing-imports
           - --no-namespace-packages
--   repo: https://github.com/PyCQA/bandit
-    rev: 1.7.4
-    hooks:
-    -   id: bandit
+# currently exclusions do not work
+#-   repo: https://github.com/PyCQA/bandit
+#    rev: 1.7.4
+#    hooks:
+#    -   id: bandit
+#        args:
+#          - -r
+#          - -x tests
+#          - project_name
 -   repo: local
     hooks:
     - id: pylint
