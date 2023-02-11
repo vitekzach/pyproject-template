@@ -4,11 +4,11 @@ from project_name.core.util import (
     return_int_back,
     throwing_caught_error,
 )
-from project_name.logging.logging_setup import logger
+from project_name.project_logging.logging_setup import logger
 
 logger.info("Application start")
 
-# contextualizing logging in this function
+# contextualizing project_logging in this function
 outer_function()
 
 # regular function that works

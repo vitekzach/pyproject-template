@@ -1,14 +1,12 @@
 """General app settings necessary for its run."""
-from dataclasses import dataclass
 
 from pydantic import BaseSettings, Field
 
 
-@dataclass()
-class AppSettings(BaseSettings):
+class AppSettings(BaseSettings):  # pylint: disable=too-few-public-methods
     """Basic application settings."""
 
-    prod_environment: bool = Field(
+    prod_environment: bool | None = Field(
         default=True,
         env="PROD_ENV",
         description="Whether application runs in a production or a non-production environment.",

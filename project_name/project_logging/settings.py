@@ -1,6 +1,5 @@
-"""Settings specific for application logging."""
+"""Settings specific for application project_logging."""
 
-from dataclasses import dataclass
 
 from pydantic import BaseSettings
 
@@ -9,8 +8,7 @@ from project_name.core.settings import AppSettings
 app_settings = AppSettings()
 
 
-@dataclass()
-class LoggingSettings(BaseSettings):
+class LoggingSettings(BaseSettings):  # pylint: disable=too-few-public-methods
     """Logging settings."""
 
     json_logging_level: str = "INFO" if app_settings.prod_environment else "DEBUG"

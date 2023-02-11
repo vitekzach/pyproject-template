@@ -1,6 +1,6 @@
 """Defining some utilities for app."""
 
-from project_name.logging.logging_setup import logger
+from project_name.project_logging.logging_setup import logger
 
 
 def return_int_back(i: int) -> int:

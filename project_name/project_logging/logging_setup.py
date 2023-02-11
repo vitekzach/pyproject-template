@@ -4,7 +4,7 @@ import sys
 
 from loguru import logger
 
-from project_name.logging.settings import LoggingSettings, app_settings
+from project_name.project_logging.settings import LoggingSettings, app_settings
 
 logging_settings = LoggingSettings()
 
