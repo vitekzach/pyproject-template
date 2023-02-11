@@ -48,3 +48,8 @@ start-logging-stack:
 
 precommit:
 	@pre-commit install && pre-commit run --all-files
+
+poetry-packages:
+	@poetry check
+	@poetry lock
+	@poetry export -orequirements.txt --without-hashes --without-urls

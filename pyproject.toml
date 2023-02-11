@@ -11,6 +11,7 @@ python = "^3.10"
 loguru = "^0.6.0"
 better-exceptions = "^0.3.3"
 pydantic = "^1.10.4"
+fastapi = "^0.91.0"
 
 
 [tool.poetry.group.dev.dependencies]
