@@ -1,3 +1,14 @@
+# Do not commit logs
+.logs
+
+# Ignore everything in docker created folders
+logging_stack/.grafana/*
+!logging_stack/.grafana/grafana.db
+logging_stack/.loki
+logging_stack/.loki_tmp
+logging_stack/.promtail
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
