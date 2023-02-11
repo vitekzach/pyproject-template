@@ -3,7 +3,7 @@ include .vars/variables_sensitive.env
 
 
 activate:
-	@echo "TODO Activating poetry shell"
+	@poetry shell
 
 install:
 	@echo "Installing..."
