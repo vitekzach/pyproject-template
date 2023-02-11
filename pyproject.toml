@@ -13,6 +13,19 @@ better-exceptions = "^0.3.3"
 pydantic = "^1.10.4"
 
 
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.16.1"
+pydocstyle = "^6.3.0"
+mypy = "^1.0.0"
+flake8 = "^6.0.0"
+
+[tool.pylint]
+max-line-length = 120
+
+[tool.mypy]
+ignore_missing_imports = true
+no_namespace_packages = true
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
