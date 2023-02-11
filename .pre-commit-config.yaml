@@ -69,6 +69,9 @@ repos:
     rev: v0.991  # Use the sha / tag you want to point at
     hooks:
     -   id: mypy
+        args:
+          - --ignore-missing-imports
+          - --no-namespace-packages
 -   repo: https://github.com/PyCQA/bandit
     rev: 1.7.4
     hooks:
