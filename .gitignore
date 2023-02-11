@@ -8,6 +8,7 @@ logging_stack/.loki
 logging_stack/.loki_tmp
 logging_stack/.promtail
 
+.idea
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
