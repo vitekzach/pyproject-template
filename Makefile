@@ -16,7 +16,6 @@ test:
 	@poetry run python -m pytest --cov=${PROJECT_NAME} --cov-report=html
 
 format:
-	@echo "TODO Formatting python code"
 	@echo "______________________________________________________________ISORT______________________________________________________________"
 	@poetry run python -m isort --profile=black ${PROJECT_NAME} tests
 	@echo "_____________________________________________________________FLAKE8______________________________________________________________"
