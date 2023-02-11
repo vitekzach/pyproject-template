@@ -47,4 +47,3 @@ services:
       - loki
     networks:
       - loki
-
