@@ -19,6 +19,7 @@ pydocstyle = "^6.3.0"
 mypy = "^1.0.0"
 flake8 = "^6.0.0"
 bandit = {extras = ["toml"], version = "^1.7.4"}
+isort = "^5.12.0"
 
 [tool.pylint]
 max-line-length = 120
@@ -29,6 +30,11 @@ no_namespace_packages = true
 
 [tool.bandit]
 exclude_dirs = ["tests",]
+
+[tool.pytest.ini_options]
+markers = [
+    "utils: utilities for package",
+]
 
 [build-system]
 requires = ["poetry-core"]
