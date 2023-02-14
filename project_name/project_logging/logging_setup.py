@@ -15,6 +15,7 @@ logger.configure(
             "backtrace": logging_settings.backtrace,
             "diagnose": logging_settings.diagnose,
             "level": logging_settings.json_logging_level,
+            "enqueue": True,
         },
         {
             "sink": ".logs/log.json",
@@ -22,12 +23,14 @@ logger.configure(
             "backtrace": logging_settings.backtrace,
             "diagnose": logging_settings.diagnose,
             "level": logging_settings.json_logging_level,
+            "enqueue": True,
         },
         {
             "sink": ".logs/log.txt",
             "backtrace": logging_settings.backtrace,
             "diagnose": logging_settings.diagnose,
             "level": logging_settings.txt_logging_level,
+            "enqueue": True,
         },
     ]
 )
